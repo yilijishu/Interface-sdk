@@ -54,10 +54,20 @@
             <version>3.13.2</version>
         </dependency>
         <dependency>
+		  <groupId>com.qiniu</groupId>
+		  <artifactId>qiniu-java-sdk</artifactId>
+		  <version>[7.19.0, 7.19.99]</version>
+		</dependency>
+        <dependency>
             <groupId>com.yilijishu</groupId>
             <artifactId>yili-utils</artifactId>
             <version>RELEASE</version>
         </dependency>
+        <dependency>
+		  <groupId>com.aliyun</groupId>
+		  <artifactId>dysmsapi20170525</artifactId>
+		  <version>4.5.0</version>
+		</dependency>
     </dependencies>
 
     <build>
