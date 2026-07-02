@@ -93,8 +93,21 @@ public class QiniuyunApiRest {
 	 * @return 上传结果
 	 */
 	public ApiRestResult uploadLargeFile(String filePath, String fileName) {
-		ApiRestResult<String> apiRestResult = new ApiRestResult<>();
 		File file = new File(filePath);
+		return uploadLargeFile(file, fileName);
+	}
+
+	/**
+	 * 大文件分片上传（断点续传），支持 File 对象
+	 *
+	 * @param file
+	 *            File对象
+	 * @param fileName
+	 *            文件名
+	 * @return 上传结果
+	 */
+	public ApiRestResult uploadLargeFile(File file, String fileName) {
+		ApiRestResult<String> apiRestResult = new ApiRestResult<>();
 		if (file == null || !file.exists()) {
 			apiRestResult.setCode(500);
 			apiRestResult.setRawData("File not found");
@@ -130,6 +143,22 @@ public class QiniuyunApiRest {
 			apiRestResult.setRawData("IO Error: " + e.getMessage());
 		}
 		return apiRestResult;
+	}
+
+	/**
+	 * 大文件分片上传（断点续传），支持 File 对象和额外参数
+	 *
+	 * @param file
+	 *            File对象
+	 * @param fileName
+	 *            文件名
+	 * @param extra
+	 *            额外参数（可为null）
+	 * @return 上传结果
+	 */
+	public ApiRestResult uploadLargeFile(File file, String fileName, Object extra) {
+		// 忽略 extra 参数，直接调用核心方法
+		return uploadLargeFile(file, fileName);
 	}
 
 	/**
