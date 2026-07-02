@@ -14,7 +14,7 @@ public class AliyunSmsApiRest {
 	private String accessKey = "LTAI5tA3N1odaBvP9";
 	private String secretKey = "vdmaRLItsN1OYV2F9qPIIBH";
 
-	private AliyunSmsApiRest(String accessKey, String secretKey) {
+	public AliyunSmsApiRest(String accessKey, String secretKey) {
 		this.accessKey = accessKey;
 		this.secretKey = secretKey;
 	}

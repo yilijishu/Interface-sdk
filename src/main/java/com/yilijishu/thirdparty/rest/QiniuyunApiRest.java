@@ -34,7 +34,7 @@ public class QiniuyunApiRest {
 	/** 分片上传文件大小阈值（字节），超过此大小使用分片上传，默认 4MB */
 	private static final long SLICE_UPLOAD_THRESHOLD = 4 * 1024 * 1024;
 
-	private QiniuyunApiRest(String accessKey, String secretKey, String bucket) {
+	public QiniuyunApiRest(String accessKey, String secretKey, String bucket) {
 		this.accessKey = accessKey;
 		this.secretKey = secretKey;
 		this.bucket = bucket;
