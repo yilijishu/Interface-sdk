@@ -11,8 +11,8 @@ public class AliyunSmsApiRest {
 	private com.aliyun.dysmsapi20170525.Client aliYunClient = null;
 
 	private String endpoint = "dysmsapi.aliyuncs.com";
-	private String accessKey = "LTAI5tA3N1odaBvP9";
-	private String secretKey = "vdmaRLItsN1OYV2F9qPIIBH";
+	private String accessKey = "";
+	private String secretKey = "";
 
 	public AliyunSmsApiRest(String accessKey, String secretKey) {
 		this.accessKey = accessKey;
@@ -30,6 +30,12 @@ public class AliyunSmsApiRest {
 
 	/**
 	 * 发送短信
+	 * @param contact contact
+	 * @param SignName SignName
+	 * @param TemplateCode TemplateCode
+	 * @param templateParam templateParam
+	 * @return SendSmsResponse
+	 * @throws Exception
 	 */
 	public SendSmsResponse sendMessage(String contact, String SignName, String TemplateCode, String templateParam) throws Exception {
 		if (contact == null || contact.isEmpty()) {
@@ -44,10 +50,5 @@ public class AliyunSmsApiRest {
 		return sendSmsResponse;
 	}
 
-	public static void main(String[] args) throws Exception {
-		// SendSmsResponse sendMessage =
-		// AliyunSmsApiRest.sendMessage("13488791523", "北京", "SMS_330",
-		// "{\"code\":\"123321\"}");
-	}
 
 }

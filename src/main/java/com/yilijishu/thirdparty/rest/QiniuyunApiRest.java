@@ -27,8 +27,8 @@ import com.yilijishu.thirdparty.bean.ApiRestResult;
  */
 public class QiniuyunApiRest {
 
-	private String accessKey = "PTk6ArD8U3wo03tppoB23211233311qwqQ23AEEh";
-	private String secretKey = "PTk6ArD8U3wo03tppoB23211233311qwqQ23AEEh";
+	private String accessKey = "";
+	private String secretKey = "";
 	private String bucket = "DEMO";
 
 	/** 分片上传文件大小阈值（字节），超过此大小使用分片上传，默认 4MB */
